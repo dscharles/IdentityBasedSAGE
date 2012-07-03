@@ -1,9 +1,11 @@
 import random
-from sage.all import PublicKeyCryptosystem
+from sage.crypto.cryptosystem import PublicKeyCryptosystem
 from sage.all import EllipticCurve
 from sage.all import Hom
+from sage.all import Zmod, FiniteField, Integer
+from copy import deepcopy
 
-class BasicIdent():
+class BasicIdent(PublicKeyCryptosystem):
     """
     The Basic Identity Scheme proposed by Boneh and Franklin. 
     This scheme needs an Elliptic Curve over a finite field, a point of order n, and a distortion map.
